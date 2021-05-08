@@ -1,18 +1,20 @@
 package com.example.dsapplication;
 
-public class ProduitResponse {
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+public class Produit extends AppCompatActivity {
     private int id;
     private int quantite;
     private float prixU;
     private String refProd;
-    private int fournisseur;
-
-    public ProduitResponse(int id, int quantite, float prixU, String refProd,int fournisseur) {
+    public Produit(int id, int quantite, float prixU, String refProd) {
         this.id = id;
         this.quantite = quantite;
         this.prixU = prixU;
         this.refProd = refProd;
-        this.fournisseur = fournisseur;
+
     }
 
     public float getPrixU() {
@@ -35,10 +37,6 @@ public class ProduitResponse {
         this.refProd = reference;
     }
 
-    public void setFournisseur(int fournisseur) {
-        this.fournisseur = fournisseur;
-    }
-
 
     public int getId() {
         return id;
@@ -52,7 +50,11 @@ public class ProduitResponse {
         return refProd;
     }
 
-    public int getFournisseur() {
-        return fournisseur;
+ @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_produit);
+
+
     }
 }

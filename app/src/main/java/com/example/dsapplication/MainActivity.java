@@ -2,18 +2,106 @@ package com.example.dsapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-        AutoCompleteTextView autoSaisie;
+    private Button b1;
+    private Button b2;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        this.b1 = findViewById(R.id.btn1);
+        this.b2 = findViewById(R.id.btn2);
+        Button btn1 = findViewById(R.id.btn1);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, ClientDetailsActivity.class);
+                startActivity(i);
+            }
+        });
+
+
+    Button btn2 = findViewById(R.id.btn2);
+        btn2.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(MainActivity.this, NewProductActivity.class);
+            startActivity(intent);
+        }
+        });
+    }
+}
+
+
+
+
+
+
+
+
+    /*ListView list;
+    private List<Produit> produitList;
+
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+@Override
+public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(MainActivity.this,ProduitActivity.class);
+        intent.putExtra("id",Integer.toString(produitList.get(position).getId()));
+        intent.putExtra("prix",Float.toString(produitList.get(position).getPrixU()));
+        intent.putExtra("Reference",produitList.get(position).getReference());
+        intent.putExtra("quantite",Integer.toString(produitList.get(position).getQuantite()));
+        startActivity(intent);
+        }
+        });
+
+        Button btnadd = findViewById(R.id.buttonAdd);
+        btnadd.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+        Intent intent = new Intent(MainActivity.this,NewProductActivity.class);
+        startActivity(intent);
+        }
+        });
+        }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     /*   AutoCompleteTextView autoSaisie;
         ListView lst;
         String[] allClient={"hana","sana","bilel","malek"};
         String[] allProduit={"cosmetique","beaute","soins","solaire","naturel","vestimentaire"};
@@ -34,58 +122,9 @@ public class MainActivity extends AppCompatActivity {
 
                 this.autoSaisie = findViewById(R.id.saisieAuto);
 
-                ArrayAdapter ar = new ArrayAdapter<String>(this,
-                        android.R.layout.simple_dropdown_item_1line, this.allClient);
-
-                autoSaisie.setAdapter(ar);
-
-                autoSaisie.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> adapterView, View v, int i, long l) {
-                        selectedClient= ((TextView) v).getText().toString();
-
-                        MyAdapter adapter;
-
-                        if (selectedClient.equals("hana")) {
-                            adapter = (MyAdapter) new ArrayAdapter(MainActivity.this, android.R.layout.simple_list_item_1,AchatHana);
 
 
-                        } else if (selectedClient.equals("sana")) {
-                            adapter = (MyAdapter) new ArrayAdapter(MainActivity.this, android.R.layout.simple_list_item_1, Achatsana);
-
-                        } else if(selectedClient.equals("bilel")){
-                            adapter = (MyAdapter) new ArrayAdapter(MainActivity.this, android.R.layout.simple_list_item_1, AchatBilel);
-
-                        }
-                    else {
-                            adapter = (MyAdapter) new ArrayAdapter(MainActivity.this, android.R.layout.simple_list_item_1, AchatMalek);
-                        }
-
-
-                        lst.setAdapter(adapter);
-
-                        lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                            @Override
-                            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                                String selectedProduit = allProduit[position];
-                                TextView myAchat = (TextView) v;
-                                Double achat = Double.parseDouble(myAchat.getText().toString());
-
-                                if (achat >= 10)
-                                    Toast.makeText(getApplicationContext(), selectedProduit + " :Congratulations  !! you have a gift", Toast.LENGTH_LONG).show();
-                                else
-                                    Toast.makeText(getApplicationContext(), selectedProduit + " :Congratulations ", Toast.LENGTH_LONG).show();
-
-
-
-                            }
-                        });
-
-
-
-                    }
-                });
             }
         }
-
+*/
 

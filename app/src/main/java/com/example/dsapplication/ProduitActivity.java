@@ -27,52 +27,46 @@ public class ProduitActivity extends AppCompatActivity {
         refProd = findViewById(R.id.refProd);
         quantite = findViewById(R.id.quantite);
         img = findViewById(R.id.imageView);
-        Button edit =findViewById(R.id.edit);
-        Button goback=findViewById(R.id.goback);
-        Button delete=findViewById(R.id.delete);
-        Bundle bundle=getIntent().getExtras();
+        Button edit = findViewById(R.id.edit);
+        Button goback = findViewById(R.id.goback);
+        Button delete = findViewById(R.id.delete);
+        Bundle bundle = getIntent().getExtras();
 
-        if(bundle!=null){
+        if (bundle != null) {
             img.setImageResource(R.drawable.prod);
             id.setText(bundle.getString("id"));
             refProd.setText(bundle.getString("refProd"));
             quantite.setText(bundle.getString("quantite"));
             prix.setText(bundle.getString("prix"));
-    }
-        edit.setOnClickListener(new View.OnClickListener()
-        {
+        }
+        edit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 updatepoduit();
             }
-            private void updatepoduit()
-            {
-                final String idP=id.getText().toString().trim();
-                final String refP=refProd.getText().toString().trim();
-                final String quantiteP=quantite.getText().toString().trim();
-                final String prixP=prix.getText().toString().trim();
 
-                if(refP.isEmpty())
-                {
+            private void updatepoduit() {
+                final String idP = id.getText().toString().trim();
+                final String refP = refProd.getText().toString().trim();
+                final String quantiteP = quantite.getText().toString().trim();
+                final String prixP = prix.getText().toString().trim();
+
+                if (refP.isEmpty()) {
                     refProd.setError("Reference is required");
                     refProd.requestFocus();
                     return;
                 }
-                if(refP.isEmpty())
-                {
+                if (refP.isEmpty()) {
                     refProd.setError("Reference is required");
                     refProd.requestFocus();
                     return;
                 }
-                if(quantiteP.isEmpty())
-                {
+                if (quantiteP.isEmpty()) {
                     quantite.setError("Qunatite is required");
                     quantite.requestFocus();
                     return;
                 }
-                if(prixP.isEmpty())
-                {
+                if (prixP.isEmpty()) {
                     prix.setError("Prix is required");
                     prix.requestFocus();
                     return;
@@ -80,16 +74,16 @@ public class ProduitActivity extends AppCompatActivity {
 
             }
         });
-            delete.setOnClickListener(new View.OnClickListener() {
+        delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder( ProduitActivity.this );
+                AlertDialog.Builder builder = new AlertDialog.Builder(ProduitActivity.this);
                 builder.setTitle("Are you sure ?");
                 builder.setMessage("This action is irreversible !");
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                       return;
+                        return;
                     }
                 });
                 builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -101,14 +95,16 @@ public class ProduitActivity extends AppCompatActivity {
 
                 AlertDialog ad = builder.create();
                 ad.show();
-            }});
+            }
+        });
 
         goback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ProduitActivity.this, HomeActivity.class);
+                Intent intent = new Intent(ProduitActivity.this, MainActivity.class);
                 startActivity(intent);
             }
-        });}}
+        });
+    }}
 
 

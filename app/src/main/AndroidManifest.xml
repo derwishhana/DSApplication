@@ -9,8 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DSApplication">
-        <activity android:name=".MyAdapter"></activity>
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".ClientListActivity" />
+        <activity android:name=".ClientDetailsActivity" />
+        <activity android:name=".Client_details_activity" />
+        <activity android:name=".AddClientActivity" />
+        <activity android:name=".Produit" />
+        <activity android:name=".Product" />
+        <activity android:name=".NewProductActivity" />
+        <activity android:name=".MyAdapter" />
         <activity android:name=".ProduitActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

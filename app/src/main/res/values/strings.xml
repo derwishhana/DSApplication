@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">DSApplication</string>
+    <string name="main_add_Client">Add Client</string>
+    <string name="main_show_Client">List Clients</string>
+    <string name="field_name">Nom : </string>
+    <string name="field_first_name">Prénom : </string>
+    <string name="field_email">Email : </string>
+    <string name="field_birthdate">Date de\n naissance : </string>
+    <string name="button_birthdate">Choice date</string>
+    <string name="button_add">Add</string>
 </resources>

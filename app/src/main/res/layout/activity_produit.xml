@@ -117,7 +117,7 @@ android:padding="10dp">
         android:text="Edit"
         android:textAllCaps="false"
         android:textColor="@color/colorFormBackground" />
-
+b
     <Button
         android:id="@+id/delete"
         android:layout_width="159dp"
